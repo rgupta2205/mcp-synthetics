@@ -41,25 +41,7 @@ def _initialize_aws_clients():
     lambda_endpoint = os.environ.get('MCP_LAMBDA_ENDPOINT')
     sts_endpoint = os.environ.get('MCP_STS_ENDPOINT')
 
-    # Log endpoint overrides
-    if appsignals_endpoint:
-        logger.debug(f'Using Application Signals endpoint override: {appsignals_endpoint}')
-    if logs_endpoint:
-        logger.debug(f'Using CloudWatch Logs endpoint override: {logs_endpoint}')
-    if cloudwatch_endpoint:
-        logger.debug(f'Using CloudWatch endpoint override: {cloudwatch_endpoint}')
-    if xray_endpoint:
-        logger.debug(f'Using X-Ray endpoint override: {xray_endpoint}')
-    if synthetics_endpoint:
-        logger.debug(f'Using Synthetics endpoint override: {synthetics_endpoint}')
-    if s3_endpoint:
-        logger.debug(f'Using S3 endpoint override: {s3_endpoint}')
-    if iam_endpoint:
-        logger.debug(f'Using IAM endpoint override: {iam_endpoint}')
-    if lambda_endpoint:
-        logger.debug(f'Using Lambda endpoint override: {lambda_endpoint}')
-    if sts_endpoint:
-        logger.debug(f'Using STS endpoint override: {sts_endpoint}')
+
 
     # Check for AWS_PROFILE environment variable
     if aws_profile := os.environ.get('AWS_PROFILE'):
